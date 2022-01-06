@@ -5,8 +5,12 @@ class TwoSum
     # @param {Integer} target
     # @return {Integer[]}
     def two_sum(nums, target)
-        puts "Starting two_sum..."
-        [1,2]    
-        puts "Finished two_sum"
+        for i in 0...nums.count
+            left_side = nums[i]
+            for j in i+1...nums.count
+                right_side = nums[j]
+                return [i,j] if left_side + right_side == target
+            end
+        end
     end
 end
