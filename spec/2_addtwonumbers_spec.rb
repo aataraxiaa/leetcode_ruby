@@ -7,9 +7,9 @@ describe AddTwoNumbers do
    
         # TODO: Create convenience method to easily create LinkedList from array of values
 
-        list_one = ListNode.new()
-        list_two = ListNode.new()
-        list_result = ListNode.new()
+        list_one = ListNode.from_array([2,4,3])
+        list_two = ListNode.from_array([5,6,4])
+        list_result = ListNode.from_array([7,0,8])
         add_two_numbers = AddTwoNumbers.new
         expect(add_two_numbers.add_two_numbers(list_one,list_two)).to eq(list_result)
     end
