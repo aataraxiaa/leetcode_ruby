@@ -9,19 +9,16 @@ class ListNode
     def to_array
         result = []
         l_next = self
-        while l_next != nil
+        while l_next
             result.unshift(l_next.val)
             l_next = l_next.next
         end
         result
     end
 
-    # def ==(other_object)
-    #     array1 = self.to_array
-    #     p array1
-    #     # self.to_array == other_object.to_array
-    #     true
-    # end
+    def ==(other_object)
+        self.to_array == other_object.to_array
+    end
 
     def self.from_array(nodes)
         current_next = nil
