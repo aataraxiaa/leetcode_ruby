@@ -31,6 +31,3 @@ class ListNode
     end
 
 end
-
-list = ListNode.from_array([2,4,3])
-p list
