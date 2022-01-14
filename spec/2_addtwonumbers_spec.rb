@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 require '2_addtwonumbers.rb'
 require 'listnode.rb'
 

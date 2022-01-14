@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 require '1_twosum.rb'
 
 describe TwoSum do
