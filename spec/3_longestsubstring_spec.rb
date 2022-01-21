@@ -19,4 +19,22 @@ describe LongestSubstring do
         longest_substring = LongestSubstring.new
         expect(longest_substring.length_of_longest_substring(input)).to eq(3)
     end
+
+    it "returns 1 for input ' '" do
+        input  = " "
+        longest_substring = LongestSubstring.new
+        expect(longest_substring.length_of_longest_substring(input)).to eq(1)
+    end
+
+    it "returns 2 for input 'au'" do
+        input  = "au"
+        longest_substring = LongestSubstring.new
+        expect(longest_substring.length_of_longest_substring(input)).to eq(2)
+    end
+
+    it "returns 3 for input 'dvdf'" do
+        input  = "dvdf"
+        longest_substring = LongestSubstring.new
+        expect(longest_substring.length_of_longest_substring(input)).to eq(3)
+    end
 end
