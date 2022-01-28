@@ -13,4 +13,11 @@ describe LongestPalindromicSubstring do
         longest_palindromic_substring = LongestPalindromicSubstring.new
         expect(longest_palindromic_substring.longest_palindrome(input)).to eq('bb')
     end
+
+    "aacabdkacaa"
+    it "Returns 'bb' for string 'aacabdkacaa'" do
+        input  = 'aacabdkacaa'
+        longest_palindromic_substring = LongestPalindromicSubstring.new
+        expect(longest_palindromic_substring.longest_palindrome(input)).to eq('aca')
+    end
 end
