@@ -1,4 +1,4 @@
-require 'listnode.rb'
+require './lib/DataTypes/listnode.rb'
 
 class AddTwoNumbers
 

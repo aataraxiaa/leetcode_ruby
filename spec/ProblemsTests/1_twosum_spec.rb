@@ -1,5 +1,5 @@
 require 'spec_helper'
-require '1_twosum.rb'
+require './lib/Problems/1_twosum'
 
 describe TwoSum do
     it "returns [3,5] when nums = [1,2,3,4,5,6], target = 10" do

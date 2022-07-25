@@ -1,5 +1,5 @@
 require 'spec_helper'
-require '3_longestsubstring.rb'
+require './lib/Problems/3_longestsubstring'
 
 describe LongestSubstring do
     it "returns 3 for input 'abcabcbb'" do

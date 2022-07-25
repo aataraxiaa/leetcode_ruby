@@ -1,5 +1,5 @@
 require 'spec_helper'
-require '9_palindrome_number'
+require './lib/Problems/9_palindrome_number'
 
 describe PalindromeNumber do
     it "Returns 'true' for input '121'" do

@@ -1,6 +1,6 @@
 require 'spec_helper'
-require '2_addtwonumbers.rb'
-require 'listnode.rb'
+require './lib/Problems/2_addtwonumbers'
+require './lib/DataTypes/listnode'
 
 describe AddTwoNumbers do
     it "returns ListNode [7,0,8] for ListNode [2,4,3] and ListNode [5,6,4]" do

@@ -1,5 +1,5 @@
 require 'spec_helper'
-require '5_longest_palindromic_substring'
+require './lib/Problems/5_longest_palindromic_substring'
 
 describe LongestPalindromicSubstring do
     it "Returns 'bab' for string 'babad'" do
