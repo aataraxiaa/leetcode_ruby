@@ -6,17 +6,35 @@ require './lib/TopInterviewEasy/array_solutions'
 describe ArraySolutions do
   sut = ArraySolutions.new
 
-  it 'returns 2 when nums = [1,1,2]' do
-    nums = [1, 1, 2]
-    result = sut.remove_duplicates(nums) 
-    expect(result).to eq(2)
-    expect(nums.first(result)).to eq([1, 2])
+  context 'When removing duplicates' do
+    it 'returns 2 when nums = [1,1,2]' do
+      nums = [1, 1, 2]
+      result = sut.remove_duplicates(nums)
+      expect(result).to eq(2)
+      expect(nums.first(result)).to eq([1, 2])
+    end
+
+    it 'returns 5 when nums = [0,0,1,1,1,2,2,3,3,4]' do
+      nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+      result = sut.remove_duplicates(nums)
+      expect(result).to eq(5)
+      expect(nums.first(result)).to eq([0,1,2,3,4])
+    end
   end
 
-  it 'returns 5 when nums = [0,0,1,1,1,2,2,3,3,4]' do
-    nums = [0,0,1,1,1,2,2,3,3,4]
-    result = sut.remove_duplicates(nums) 
-    expect(result).to eq(5)
-    expect(nums.first(result)).to eq([0,1,2,3,4])
+  context 'When rotating array' do
+    it 'rotates nums [1,2,3,4,5,6,7] to [5,6,7,1,2,3,4] when k is 3' do
+      nums = [1, 2, 3, 4, 5, 6, 7]
+      k = 3
+      sut.rotate(nums, k)
+      expect(nums).to eq([5, 6, 7, 1, 2, 3, 4])
+    end
+
+    it 'rotates nums [-1,-100,3,99] to [3,99,-1,-100] when k is 2' do
+      nums = [-1, -100, 3, 99]
+      k = 2
+      sut.rotate(nums, k)
+      expect(nums).to eq([3, 99, -1, -100])
+    end
   end
 end

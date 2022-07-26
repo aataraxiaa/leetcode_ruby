@@ -15,4 +15,14 @@ class ArraySolutions
     end
     last_unique + 1
   end
+
+  # @param {Integer[]} nums
+  # @param {Integer} k
+  # @return {Void} Do not return anything, modify nums in-place instead.
+  def rotate(nums, k)
+    copy = nums.dup
+    (0...nums.length).each do |i|
+      nums[i] = copy[(i - k) % nums.length]
+    end
+  end
 end
