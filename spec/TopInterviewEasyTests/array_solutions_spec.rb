@@ -37,4 +37,32 @@ describe ArraySolutions do
       expect(nums).to eq([3, 99, -1, -100])
     end
   end
+
+
+# Input: nums = [1,2,3,4]
+# Output: false
+# Example 3:
+
+# Input: nums = [1,1,1,3,3,4,3,2,4,2]
+# Output: true
+
+  context 'Checking contains duplicate' do
+    it 'returns true when nums is [1,2,3,1]' do
+      nums = [1, 2, 3, 1]
+      result = sut.contains_duplicate(nums)
+      expect(result).to be(true)
+    end
+
+    it 'returns false when nums is [1,2,3,4]' do
+      nums = [1, 2, 3, 4]
+      result = sut.contains_duplicate(nums)
+      expect(result).to be(false)
+    end
+
+    it 'returns true when nums is [1,1,1,3,3,4,3,2,4,2]' do
+      nums = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
+      result = sut.contains_duplicate(nums)
+      expect(result).to be(true)
+    end
+  end
 end
