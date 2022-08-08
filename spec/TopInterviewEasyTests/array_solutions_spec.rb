@@ -38,14 +38,6 @@ describe ArraySolutions do
     end
   end
 
-
-# Input: nums = [1,2,3,4]
-# Output: false
-# Example 3:
-
-# Input: nums = [1,1,1,3,3,4,3,2,4,2]
-# Output: true
-
   context 'Checking contains duplicate' do
     it 'returns true when nums is [1,2,3,1]' do
       nums = [1, 2, 3, 1]
@@ -63,6 +55,26 @@ describe ArraySolutions do
       nums = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
       result = sut.contains_duplicate(nums)
       expect(result).to be(true)
+    end
+  end
+
+  context 'Checking Single Number' do
+    it 'returns 1 when nums is [2,2,1]' do
+      nums = [2, 2, 1]
+      result = sut.single_number(nums)
+      expect(result).to eq(1)
+    end
+
+    it 'returns 4 when nums is [4,1,2,1,2]' do
+      nums = [4, 1, 2, 1, 2]
+      result = sut.single_number(nums)
+      expect(result).to eq(4)
+    end
+
+    it 'returns 1 when nums is [1]' do
+      nums = [1]
+      result = sut.single_number(nums)
+      expect(result).to eq(1)
     end
   end
 end

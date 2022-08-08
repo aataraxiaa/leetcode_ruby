@@ -37,4 +37,14 @@ class ArraySolutions
     end
     false
   end
+
+  # @param {Integer[]} nums
+  # @return {Integer}
+  def single_number(nums)
+    dict = {}
+    nums.each do |num|
+      dict[num] ? dict.delete(num) : dict[num] = num
+    end
+    dict.keys.first
+  end
 end
