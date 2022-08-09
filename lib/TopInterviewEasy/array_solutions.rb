@@ -47,4 +47,22 @@ class ArraySolutions
     end
     dict.keys.first
   end
+
+  # @param {Integer[]} nums1
+  # @param {Integer[]} nums2
+  # @return {Integer[]}
+  def intersect(nums1, nums2)
+    counts = Hash.new(0)
+    intersection = []
+    nums1.each do |num|
+      counts[num] += 1
+    end
+    nums2.each do |num|
+      if counts[num] > 0
+        counts[num] -= 1
+        intersection << num
+      end
+    end
+    intersection
+  end
 end
