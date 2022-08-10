@@ -65,4 +65,22 @@ class ArraySolutions
     end
     intersection
   end
+
+  # @param {Integer[]} digits
+  # @return {Integer[]}
+  def plus_one(digits)
+    carry = 1
+    i = digits.length - 1
+    while i >= 0 && carry == 1
+      value = digits[i]
+      result = value + carry
+      digits[i] = result % 10
+      carry = result / 10
+      i -= 1
+    end
+
+    digits.unshift(carry) if carry == 1
+
+    digits
+  end
 end

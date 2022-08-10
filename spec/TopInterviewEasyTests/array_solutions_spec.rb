@@ -93,4 +93,24 @@ describe ArraySolutions do
       expect(result).to eq([4, 9])
     end
   end
+
+  context 'Checking Plus One' do
+    it 'returns [1,2,4] when digits is [1,2,3]' do
+      digits = [1, 2, 3]
+      result = sut.plus_one(digits)
+      expect(result).to eq([1, 2, 4])
+    end
+
+    it 'returns [4,3,2,2] when digits is [4,3,2,1]' do
+      digits = [4, 3, 2, 1]
+      result = sut.plus_one(digits)
+      expect(result).to eq([4, 3, 2, 2])
+    end
+
+    it 'returns [1,0] when digits is [9]' do
+      digits = [9]
+      result = sut.plus_one(digits)
+      expect(result).to eq([1, 0])
+    end
+  end
 end
