@@ -83,4 +83,32 @@ class ArraySolutions
 
     digits
   end
+
+  def move_zeroes_attempt(nums)
+    for i in 0...nums.length
+      j = i
+      next unless (nums[i]).zero?
+
+      j += 1 while !nums[j].nil? && (nums[j]).zero?
+      break if j >= nums.length
+
+      nums[i], nums[j] = nums[j], nums[i]
+    end
+  end
+
+  # @param {Integer[]} nums
+  # @return {Void} Do not return anything, modify nums in-place instead.
+  def move_zeroes(nums)
+    nonzerocount = 0
+    (0...nums.length).each do |i|
+      next if (nums[i]).zero?
+
+      nums[nonzerocount] = nums[i]
+      nonzerocount += 1
+    end
+
+    (nonzerocount...nums.length).each do |j|
+      nums[j] = 0
+    end
+  end
 end

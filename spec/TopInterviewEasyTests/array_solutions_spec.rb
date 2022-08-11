@@ -113,4 +113,24 @@ describe ArraySolutions do
       expect(result).to eq([1, 0])
     end
   end
+
+  context 'Checking Move Zeroes' do
+    it 'Updates nums to [1,3,12,0,0] when nums is [0,1,0,3,12]' do
+      nums = [0, 1, 0, 3, 12]
+      sut.move_zeroes(nums)
+      expect(nums).to eq([1, 3, 12, 0, 0])
+    end
+
+    it 'Updates nums to [0] when nums is [0]' do
+      nums = [0]
+      sut.move_zeroes(nums)
+      expect(nums).to eq([0])
+    end
+
+    it 'Does not update nums when nums is [1,0]' do
+      nums = [1, 0]
+      sut.move_zeroes(nums)
+      expect(nums).to eq([1, 0])
+    end
+  end
 end
