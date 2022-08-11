@@ -107,8 +107,8 @@ class ArraySolutions
       zero_index += 1
     end
 
-    # (zero_index...nums.length).each do |j|
-    #   nums[j] = 0
-    # end
+    (zero_index...nums.length).each do |j|
+      nums[j] = 0
+    end
   end
 end
