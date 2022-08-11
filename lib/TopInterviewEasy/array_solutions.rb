@@ -99,16 +99,16 @@ class ArraySolutions
   # @param {Integer[]} nums
   # @return {Void} Do not return anything, modify nums in-place instead.
   def move_zeroes(nums)
-    nonzerocount = 0
+    zero_index = 0
     (0...nums.length).each do |i|
       next if (nums[i]).zero?
 
-      nums[nonzerocount] = nums[i]
-      nonzerocount += 1
+      nums[zero_index] = nums[i]
+      zero_index += 1
     end
 
-    (nonzerocount...nums.length).each do |j|
-      nums[j] = 0
-    end
+    # (zero_index...nums.length).each do |j|
+    #   nums[j] = 0
+    # end
   end
 end
