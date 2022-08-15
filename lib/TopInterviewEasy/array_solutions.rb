@@ -111,4 +111,19 @@ class ArraySolutions
       nums[j] = 0
     end
   end
+
+  # @param {Integer[]} nums
+  # @param {Integer} target
+  # @return {Integer[]}
+  def two_sum(nums, target)
+    hash = {}
+    (0...nums.length).each do |i|
+      current_value = nums[i]
+      remainder = target - current_value
+      remainder_index = hash[remainder]
+      return [remainder_index, i] unless remainder_index.nil?
+
+      hash[current_value] = i
+    end
+  end
 end
