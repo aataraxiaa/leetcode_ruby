@@ -19,4 +19,24 @@ describe StringSolutions do
       expect(s).to eq(['h', 'a', 'n', 'n', 'a', 'H'])
     end
   end
+
+  context 'Checking Reverse Integer' do
+    it 'Returns 321 when x is 123' do
+      s = 123
+      result = sut.reverse(s)
+      expect(result).to eq(321)
+    end
+
+    it 'Returns -321 when x is -123' do
+      s = -123
+      result = sut.reverse(s)
+      expect(result).to eq(-321)
+    end
+
+    it 'Returns 21 when x is 120' do
+      s = 120
+      result = sut.reverse(s)
+      expect(result).to eq(21)
+    end
+  end
 end
