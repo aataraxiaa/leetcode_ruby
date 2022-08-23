@@ -17,4 +17,20 @@ class StringSolutions
     result = x.abs.to_s.reverse.to_i * minus
     result.bit_length > 31 ? 0 : result
   end
+
+  # @param {String} s
+  # @return {Integer}
+  def first_uniq_char(s)
+    hash = Hash.new(0)
+    s.each_char do |c|
+      hash[c] = hash[c] + 1
+    end
+    i = 0
+    s.each_char do |c|
+      return i if hash[c] == 1
+
+      i += 1
+    end
+    -1
+  end
 end

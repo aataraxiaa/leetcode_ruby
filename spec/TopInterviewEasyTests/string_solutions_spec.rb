@@ -39,4 +39,24 @@ describe StringSolutions do
       expect(result).to eq(21)
     end
   end
+
+  context 'Checking First Unique Character' do
+    it "Returns 0 when s is 'leetcode'" do
+      s = 'leetcode'
+      result = sut.first_uniq_char(s)
+      expect(result).to eq(0)
+    end
+
+    it "Returns 2 when s is 'loveleetcode'" do
+      s = 'loveleetcode'
+      result = sut.first_uniq_char(s)
+      expect(result).to eq(2)
+    end
+
+    it "Returns -1 when s is 'aabb'" do
+      s = 'aabb'
+      result = sut.first_uniq_char(s)
+      expect(result).to eq(-1)
+    end
+  end
 end
