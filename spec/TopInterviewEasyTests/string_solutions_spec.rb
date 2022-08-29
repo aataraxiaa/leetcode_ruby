@@ -59,4 +59,20 @@ describe StringSolutions do
       expect(result).to eq(-1)
     end
   end
+
+  context 'Checks Valid Anagram' do
+    it "Returns true when s is 'anagram' and t is 'nagaram'" do
+      s = 'anagram'
+      t = 'nagaram'
+      result = sut.is_anagram(s, t)
+      expect(result).to be true
+    end
+
+    it "Returns false when s is 'rat' and t is 'car'" do
+      s = 'rat'
+      t = 'car'
+      result = sut.is_anagram(s, t)
+      expect(result).to be false
+    end
+  end
 end

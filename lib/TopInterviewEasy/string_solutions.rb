@@ -33,4 +33,24 @@ class StringSolutions
     end
     -1
   end
+
+  # @param {String} s
+  # @param {String} t
+  # @return {Boolean}
+  def is_anagram(s, t)
+    return false if s.length != t.length
+
+    hash = Hash.new(0)
+    count = s.length
+    s.each_char { |c| hash[c] = hash[c] + 1 }
+
+    t.each_char do |c|
+      if hash[c] > 0 
+        hash[c] = hash[c] - 1
+        count -= 1
+      end
+    end
+
+    count.zero?
+  end
 end
