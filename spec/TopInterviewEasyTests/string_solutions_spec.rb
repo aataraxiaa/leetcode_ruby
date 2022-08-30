@@ -75,4 +75,31 @@ describe StringSolutions do
       expect(result).to be false
     end
   end
+
+  context 'Checks Valid Palindrome' do
+    it "Returns true when s is 'A man, a plan, a canal: Panama'" do
+      s = 'A man, a plan, a canal: Panama'
+      result = sut.is_palindrome(s)
+      expect(result).to be true
+    end
+
+    it "Returns false when s is 'race a car'" do
+      s = 'race a car'
+      result = sut.is_palindrome(s)
+      expect(result).to be false
+    end
+
+    it "Returns true when s is ' '" do
+      s = ' '
+      result = sut.is_palindrome(s)
+      expect(result).to be true
+    end
+
+
+    it "Returns true when s is '\"Marge, let's \"[went].\" I await {news} telegram.\"'" do
+      s = "\"Marge, let's \"[went].\" I await {news} telegram.\"'"
+      result = sut.is_palindrome(s)
+      expect(result).to be true
+    end
+  end
 end

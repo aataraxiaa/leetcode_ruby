@@ -53,4 +53,11 @@ class StringSolutions
 
     count.zero?
   end
+
+  # @param {String} s
+  # @return {Boolean}
+  def is_palindrome(s)
+    downcase = s.downcase.delete('^a-z0-9')
+    downcase == downcase.reverse
+  end
 end
