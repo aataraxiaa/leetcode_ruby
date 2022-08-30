@@ -95,7 +95,6 @@ describe StringSolutions do
       expect(result).to be true
     end
 
-
     it "Returns true when s is '\"Marge, let's \"[went].\" I await {news} telegram.\"'" do
       s = "\"Marge, let's \"[went].\" I await {news} telegram.\"'"
       result = sut.is_palindrome(s)
