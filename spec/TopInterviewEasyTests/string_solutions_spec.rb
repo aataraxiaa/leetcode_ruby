@@ -101,4 +101,40 @@ describe StringSolutions do
       expect(result).to be true
     end
   end
+
+  # context 'Checks my_atoi' do
+  #   it "Returns 42 when s is '42'" do
+  #     s = '42'
+  #     result = sut.my_atoi(s)
+  #     expect(result).to eq(42)
+  #   end
+
+  #   it "Returns -42 when s is '   -42'" do
+  #     s = '   -42'
+  #     result = sut.my_atoi(s)
+  #     expect(result).to eq(-42)
+  #   end
+
+  #   it "Returns 4193 when s is '4193 with words'" do
+  #     s = '4193 with words'
+  #     result = sut.my_atoi(s)
+  #     expect(result).to eq(4193)
+  #   end
+  # end
+
+  context 'Checks strStr' do
+    it "Returns 0 when haystack is 'sadbutsad' and needle is 'sad'" do
+      haystack = 'sadbutsad'
+      needle = 'sad'
+      result = sut.str_str(haystack, needle)
+      expect(result).to eq(0)
+    end
+
+    it "Returns -1 when haystack is 'leetcode' and needle is 'leeto'" do
+      haystack = 'leetcode'
+      needle = 'leeto'
+      result = sut.str_str(haystack, needle)
+      expect(result).to eq(-1)
+    end
+  end
 end

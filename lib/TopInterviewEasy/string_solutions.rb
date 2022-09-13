@@ -60,4 +60,22 @@ class StringSolutions
     downcase = s.downcase.delete('^a-z0-9')
     downcase == downcase.reverse
   end
+
+  # @param {String} s
+  # @return {Integer}
+  def my_atoi(s)
+    s_stripped = s.strip
+    first = s_stripped.first
+    p first
+    s_stripped.each_char do |char|
+    end
+  end
+
+  # @param {String} haystack
+  # @param {String} needle
+  # @return {Integer}
+  def str_str(haystack, needle)
+    haystack.index(needle) || -1
+  end
+
 end
