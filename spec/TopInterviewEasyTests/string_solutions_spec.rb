@@ -137,4 +137,18 @@ describe StringSolutions do
       expect(result).to eq(-1)
     end
   end
+
+  context 'Checks Longest Common Prefix' do
+    it "Returns 'fl' when strs is ['flower', 'flow', 'flight']" do
+      strs = %w[flower flow flight]
+      result = sut.longest_common_prefix(strs)
+      expect(result).to eq('fl')
+    end
+
+    it "Returns '' when strs is ['dog', 'racecar', 'car']" do
+      strs = %w[dog racecar car]
+      result = sut.longest_common_prefix(strs)
+      expect(result).to eq('')
+    end
+  end
 end

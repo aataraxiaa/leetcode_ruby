@@ -63,13 +63,13 @@ class StringSolutions
 
   # @param {String} s
   # @return {Integer}
-  def my_atoi(s)
-    s_stripped = s.strip
-    first = s_stripped.first
-    p first
-    s_stripped.each_char do |char|
-    end
-  end
+  # def my_atoi(s)
+  #   s_stripped = s.strip
+  #   first = s_stripped.first
+  #   p first
+  #   s_stripped.each_char do |char|
+  #   end
+  # end
 
   # @param {String} haystack
   # @param {String} needle
@@ -78,4 +78,21 @@ class StringSolutions
     haystack.index(needle) || -1
   end
 
+  # @param {String[]} strs
+  # @return {String}
+  def longest_common_prefix(strs)
+    return '' if strs.empty?
+    return strs.first if strs.length == 1
+
+    first = strs.shift
+    result = ''
+
+    first.each_char.with_index do |char, index|
+      strs.each do |word|
+        return result if word[index] != char
+      end
+      result += char
+    end
+    result
+  end
 end
