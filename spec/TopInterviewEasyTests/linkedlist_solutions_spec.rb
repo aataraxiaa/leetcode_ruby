@@ -64,4 +64,20 @@ describe LinkedListSolutions do
       expect(result).to eq(expected_result)
     end
   end
+
+  context 'Checks Reverse Linked List' do
+    it 'Returns [5, 4, 3, 2, 1] when head is [1, 2, 3, 4, 5]' do
+      head = ListNode.from_array([1, 2, 3, 4, 5])
+      expected_result = ListNode.from_array([5, 4, 3, 2, 1])
+      result = sut.reverse_list(head)
+      expect(result).to eq(expected_result)
+    end
+
+    it 'Returns [2, 1] when head is [1, 2]' do
+      head = ListNode.from_array([1, 2])
+      expected_result = ListNode.from_array([2, 1])
+      result = sut.reverse_list(head)
+      expect(result).to eq(expected_result)
+    end
+  end
 end

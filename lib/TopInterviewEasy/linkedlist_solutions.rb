@@ -22,4 +22,19 @@ class LinkedListSolutions
     delayed_node.next = delayed_node.next.next
     head
   end
+
+  # @param {ListNode} head
+  # @return {ListNode}
+  def reverse_list(head)
+    current = head
+    previous = nil
+    next_node = nil
+    until current.nil?
+      next_node = current.next
+      current.next = previous
+      previous = current
+      current = next_node
+    end
+    previous
+  end
 end
