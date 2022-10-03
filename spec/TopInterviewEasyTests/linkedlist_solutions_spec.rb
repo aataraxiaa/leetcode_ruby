@@ -80,4 +80,30 @@ describe LinkedListSolutions do
       expect(result).to eq(expected_result)
     end
   end
+
+  context 'Checks Reverse Linked List' do
+    it 'Returns [1, 1, 2, 3, 4, 4] when list1 is [1, 2, 4] and list2 is [1, 3, 4]' do
+      list1 = ListNode.from_array([1, 2, 4])
+      list2 = ListNode.from_array([1, 3, 4])
+      expected_result = ListNode.from_array([1, 1, 2, 3, 4, 4])
+      result = sut.merge_two_lists(list1, list2)
+      expect(result).to eq(expected_result)
+    end
+
+    it 'Returns [] when list1 is [] and list2 is []' do
+      list1 = nil
+      list2 = nil
+      expected_result = nil
+      result = sut.merge_two_lists(list1, list2)
+      expect(result).to eq(expected_result)
+    end
+
+    it 'Returns [0] when list1 is [] and list2 is [0]' do
+      list1 = nil
+      list2 = ListNode.new(0)
+      expected_result = ListNode.new(0)
+      result = sut.merge_two_lists(list1, list2)
+      expect(result).to eq(expected_result)
+    end
+  end
 end

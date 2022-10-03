@@ -37,4 +37,40 @@ class LinkedListSolutions
     end
     previous
   end
+
+  # @param {ListNode} list1
+  # @param {ListNode} list2
+  # @return {ListNode}
+  def merge_two_lists(list1, list2)
+    return nil if list1.nil? && list2.nil?
+
+    return list1 if list2.nil?
+
+    return list2 if list1.nil?
+
+    result = ListNode.new(0)
+    current = result
+
+    current_list1 = list1
+    current_list2 = list2
+
+    while !current_list1.nil? || !current_list2.nil?
+      if current_list1.nil?
+        current.next = ListNode.new(current_list2.val)
+        current_list2 = current_list2.next
+      elsif current_list2.nil?
+        current.next = ListNode.new(current_list1.val)
+        current_list1 = current_list1.next
+      elsif current_list1.val <= current_list2.val
+        current.next = ListNode.new(current_list1.val)
+        current_list1 = current_list1.next
+      else
+        current.next = ListNode.new(current_list2.val)
+        current_list2 = current_list2.next
+      end
+      current = current.next
+    end
+
+    result.next
+  end
 end
