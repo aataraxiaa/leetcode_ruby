@@ -73,4 +73,21 @@ class LinkedListSolutions
 
     result.next
   end
+
+  # @param {ListNode} head
+  # @return {Boolean}
+  def is_palindrome(head)
+    return true if head.nil? || head.next.nil?
+
+    current = head
+    values = []
+    while !current.next.nil?
+      values << current.val
+      current = current.next
+    end
+
+    values << current.val
+
+    values == values.reverse
+  end
 end

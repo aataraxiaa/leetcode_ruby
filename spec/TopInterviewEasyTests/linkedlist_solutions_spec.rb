@@ -81,7 +81,7 @@ describe LinkedListSolutions do
     end
   end
 
-  context 'Checks Reverse Linked List' do
+  context 'Checks Merge Two Sorted Lists' do
     it 'Returns [1, 1, 2, 3, 4, 4] when list1 is [1, 2, 4] and list2 is [1, 3, 4]' do
       list1 = ListNode.from_array([1, 2, 4])
       list2 = ListNode.from_array([1, 3, 4])
@@ -104,6 +104,20 @@ describe LinkedListSolutions do
       expected_result = ListNode.new(0)
       result = sut.merge_two_lists(list1, list2)
       expect(result).to eq(expected_result)
+    end
+  end
+
+  context 'Checks Palindrome Linked List' do
+    it 'Returns true when head is [1, 2, 2, 1]' do
+      head = ListNode.from_array([1, 2, 2, 1])
+      result = sut.is_palindrome(head)
+      expect(result).to be(true)
+    end
+
+    it 'Returns false when head is [1, 2]' do
+      head = ListNode.from_array([1, 2])
+      result = sut.is_palindrome(head)
+      expect(result).to be(false)
     end
   end
 end
