@@ -120,4 +120,35 @@ describe LinkedListSolutions do
       expect(result).to be(false)
     end
   end
+
+  context 'Checks Linked List Cycle' do
+    # it 'Returns true when head is [3, 2, 0 ,-4] and pos is 1' do
+    #   tail = ListNode.new(4)
+    #   cycle = ListNode.new(2, ListNode.new(0, tail))
+    #   tail.next = cycle
+    #   head = ListNode.new(3, cycle)
+    #   result = sut.hasCycle(head)
+    #   expect(result).to be(true)
+    # end
+
+    it 'Returns true when head is [1, 2] and pos is 0' do
+      tail = ListNode.new(2)
+      head = ListNode.new(1, tail)
+      tail.next = head
+      result = sut.hasCycle(head)
+      expect(result).to be(true)
+    end
+
+    # it 'Returns true when head is [1] and pos is -1' do
+    #   head = ListNode.new(1)
+    #   result = sut.hasCycle(head)
+    #   expect(result).to be(false)
+    # end
+
+    # it 'Returns true when head is [1, 1, 1, 1] and pos is -1' do
+    #   head = ListNode.new(1, ListNode.new(1, ListNode.new(1, ListNode.new(1))))
+    #   result = sut.hasCycle(head)
+    #   expect(result).to be(false)
+    # end
+  end
 end

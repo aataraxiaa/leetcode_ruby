@@ -90,4 +90,23 @@ class LinkedListSolutions
 
     values == values.reverse
   end
+
+  # @param {ListNode} head
+  # @return {Boolean}
+  def hasCycle(head)
+    return false if head.nil? || head.next.nil?
+
+    tortoise = head
+    hare = head.next
+
+    while hare && hare.next
+
+      return true if tortoise == hare
+
+      tortoise = tortoise.next
+      hare = hare.next.next
+    end
+
+    false
+  end
 end
