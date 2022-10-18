@@ -20,4 +20,24 @@ describe TreesSolutions do
       expect(result).to eq(2)
     end
   end
+
+  context 'Checks Validate Binary Search Tree' do
+    it 'Returns true when root is [2, 1, 3]' do
+      root = TreeNode.new(2, TreeNode.new(1), TreeNode.new(3))
+      result = sut.is_valid_bst(root)
+      expect(result).to be(true)
+    end
+
+    it 'Returns false when root is [5, 1, 4, nil, nil, 3, 6]' do
+      root = TreeNode.new(5, TreeNode.new(1), TreeNode.new(4, TreeNode.new(3), TreeNode.new(6)))
+      result = sut.is_valid_bst(root)
+      expect(result).to be(false)
+    end
+
+    it 'Returns false when root is [5, 4, 6, nil, nil, 3, 7]' do
+      root = TreeNode.new(5, TreeNode.new(4), TreeNode.new(6, TreeNode.new(3), TreeNode.new(7)))
+      result = sut.is_valid_bst(root)
+      expect(result).to be(false)
+    end
+  end
 end
