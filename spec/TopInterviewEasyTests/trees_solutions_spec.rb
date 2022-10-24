@@ -40,4 +40,18 @@ describe TreesSolutions do
       expect(result).to be(false)
     end
   end
+
+  context 'Checks Symmetric Tree' do
+    it 'Returns true when root is [1, 2, 2, 3, 4, 4, 3]' do
+      root = TreeNode.new(1, TreeNode.new(2, TreeNode.new(3), TreeNode.new(4)), TreeNode.new(2, TreeNode.new(4), TreeNode.new(3)))
+      result = sut.is_symmetric(root)
+      expect(result).to be(true)
+    end
+
+    it 'Returns false when root is [1, 2, 2, nil, 3, nil, 3]' do
+      root = TreeNode.new(1, TreeNode.new(2, nil, TreeNode.new(3)), TreeNode.new(2, nil, TreeNode.new(3)))
+      result = sut.is_symmetric(root)
+      expect(result).to be(false)
+    end
+  end
 end

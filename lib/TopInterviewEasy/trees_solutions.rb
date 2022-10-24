@@ -22,4 +22,21 @@ class TreesSolutions
 
     validate_bst(root.right, root, high) && validate_bst(root.left, low, root)
   end
+
+  # @param {TreeNode} root
+  # @return {Boolean}
+  def is_symmetric(root)
+    return true if root.nil?
+
+    check_symmetric(root.left, root.right)
+  end
+
+  def check_symmetric(left, right)
+    return true if left.nil? && right.nil?
+
+    return false if left.nil? && !right.nil? || !left.nil? && right.nil?
+    return false if left.val != right.val
+
+    true && check_symmetric(left.left, right.right) && check_symmetric(left.right, right.left)
+  end
 end
