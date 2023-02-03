@@ -39,4 +39,37 @@ class TreesSolutions
 
     true && check_symmetric(left.left, right.right) && check_symmetric(left.right, right.left)
   end
+
+  # @param {TreeNode} root
+  # @return {Integer[][]}
+  def level_order(root)
+    queue = Queue.new
+
+    result = []
+    queue.push(root)
+
+    until queue.empty?
+      level_nodes = []
+
+      p "outer"
+      p queue.length
+
+      queue.length.times do
+        p "inner #{queue.length}"
+        node = queue.pop
+        next unless node
+
+        level_nodes << node.val
+
+        queue.push(node.left) if node.left
+        queue.push(node.right) if node.right
+      end
+
+      p level_nodes
+
+      result.append(level_nodes) if level_nodes.any?
+    end
+
+    result
+  end
 end

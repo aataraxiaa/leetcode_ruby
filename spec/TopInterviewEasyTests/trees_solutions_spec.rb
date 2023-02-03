@@ -54,4 +54,20 @@ describe TreesSolutions do
       expect(result).to be(false)
     end
   end
+
+  context 'Checks Level Order Traversal' do
+    it 'Returns [[3], [9, 20], [15, 7]] when root is [3, 9, 20, nil, nil, 15, 7]' do
+      root = TreeNode.new(3, TreeNode.new(9), TreeNode.new(20, TreeNode.new(15), TreeNode.new(7)))
+      result = sut.level_order(root)
+      expected = [[3], [9, 20], [15, 7]]
+      expect(result).to eq(expected)
+    end
+
+    it 'Returns [[1]] when root is [1]' do
+      root = TreeNode.new(1)
+      result = sut.level_order(root)
+      expected = [[1]]
+      expect(result).to eq(expected)
+    end
+  end
 end
