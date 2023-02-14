@@ -70,4 +70,20 @@ describe TreesSolutions do
       expect(result).to eq(expected)
     end
   end
+
+  context 'Checks Converts Sorted Array to Binary Search Tree' do
+    it 'Returns [0, -3 , 9, -10, nil, 5] when nums is [-10, -3, 0, 5, 9]' do
+      nums = [-10, -3, 0, 5, 9]
+      result = sut.sorted_array_to_bst(nums)
+      expected = TreeNode.new(0, TreeNode.new(-3, TreeNode.new(-10)), TreeNode.new(9, TreeNode.new(5)))
+      expect(result).to eq(expected)
+    end
+
+    it 'Returns [3, 1] when nums is [1, 3]' do
+      nums = [1, 3]
+      result = sut.sorted_array_to_bst(nums)
+      expected = TreeNode.new(3, TreeNode.new(1), nil)
+      expect(result).to eq(expected)
+    end
+  end
 end

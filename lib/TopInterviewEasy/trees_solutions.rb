@@ -51,11 +51,7 @@ class TreesSolutions
     until queue.empty?
       level_nodes = []
 
-      p "outer"
-      p queue.length
-
       queue.length.times do
-        p "inner #{queue.length}"
         node = queue.pop
         next unless node
 
@@ -65,11 +61,27 @@ class TreesSolutions
         queue.push(node.right) if node.right
       end
 
-      p level_nodes
 
       result.append(level_nodes) if level_nodes.any?
     end
 
     result
+  end
+
+  # @param {Integer[]} nums
+  # @return {TreeNode}
+  def sorted_array_to_bst(nums)
+    to_bst(nums)
+  end
+
+  def to_bst(nums)
+    return nil if nums.empty?
+
+    middle_index = nums.length / 2
+    middle = nums[middle_index]
+    left = nums[0...middle_index]
+    right = nums[middle_index + 1...nums.length]
+
+    TreeNode.new(middle, to_bst(left), to_bst(right))
   end
 end
