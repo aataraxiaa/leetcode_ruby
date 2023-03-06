@@ -2,7 +2,7 @@
 
 # Solutions for Sorting & Searching exercises
 class DynamicProgrammingSolutions
-  
+
   # @param {Integer} n
   # @return {Integer}
   def climb_stairs(n)
@@ -14,5 +14,11 @@ class DynamicProgrammingSolutions
     end
 
     steps[n]
+  end
+
+  # @param {Integer[]} prices
+  # @return {Integer}
+  def max_profit(prices)
+      
   end
 end
