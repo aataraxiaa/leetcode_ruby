@@ -37,6 +37,18 @@ class DynamicProgrammingSolutions
   # @param {Integer[]} nums
   # @return {Integer}
   def max_sub_array(nums)
-      
+    best_sum = -100_01
+    current_sum = 0
+    nums.each do |i|
+      current_sum += i
+      best_sum = current_sum if best_sum < current_sum
+      current_sum = 0 if current_sum.negative?
+    end
+    best_sum
+  end
+
+  # @param {Integer[]} nums
+  # @return {Integer}
+  def rob(nums)
   end
 end
