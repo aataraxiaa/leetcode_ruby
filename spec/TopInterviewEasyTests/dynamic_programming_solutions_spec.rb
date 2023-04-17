@@ -69,11 +69,25 @@ describe DynamicProgrammingSolutions do
   end
 
   context 'House Robber' do
-    # it 'Returns 6 when nums is [-2, 1, -3, 4, -1, 2, 1, -5, 4]' do
-    #   nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-    #   expected = 6
-    #   actual = sut.max_sub_array(nums)
-    #   expect(actual).to eq(expected)
-    # end
+    it 'Returns 4 when nums is [1, 2, 3, 1]' do
+      nums = [1, 2, 3, 1]
+      expected = 4
+      actual = sut.rob(nums)
+      expect(actual).to eq(expected)
+    end
+
+    it 'Returns 12 when nums is [2, 7, 9, 3, 1]' do
+      nums = [2, 7, 9, 3, 1]
+      expected = 12
+      actual = sut.rob(nums)
+      expect(actual).to eq(expected)
+    end
+
+    it 'Returns 12 when nums is [2, 1, 3, 99, 60]' do
+      nums = [2, 1, 3, 99, 60]
+      expected = 101
+      actual = sut.rob(nums)
+      expect(actual).to eq(expected)
+    end
   end
 end

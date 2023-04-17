@@ -50,5 +50,21 @@ class DynamicProgrammingSolutions
   # @param {Integer[]} nums
   # @return {Integer}
   def rob(nums)
+    puts "\n --- nums: #{nums} ---"
+    max_loot(nums, nums.length - 1, Array.new(nums.length, - 1))
+  end
+
+  def max_loot(nums, index, results)
+    return 0 if index.negative?
+
+    return nums[index] if index.zero?
+
+    return results[index] unless results[index].negative?
+
+    pick = nums[index] + max_loot(nums, index - 2, results)
+
+    not_pick = max_loot(nums, index - 1, results)
+
+    results[index] = [pick, not_pick].max
   end
 end
