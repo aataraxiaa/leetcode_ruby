@@ -46,6 +46,22 @@ class ArrayAndStringsSolutions
   # @param {Integer[][]} matrix
   # @return {Void} Do not return anything, modify matrix in-place instead.
   def set_zeroes(matrix)
-    
+    rows = Set[]
+    columns = Set[]
+    matrix.each_with_index do |row, row_index|
+      # p row, index
+      row.each_with_index do |column, column_index|
+        # p column, index
+        if column.zero?
+          rows << row_index
+          columns << column_index
+        end
+      end
+    end
+
+    p rows, columns
+
+    # Next, try using row and column sets to run through Matrix and set zeros
+
   end
 end

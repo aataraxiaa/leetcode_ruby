@@ -3,6 +3,7 @@
 require 'spec_helper'
 require './lib/TopInterviewMedium/array_and_strings_solutions'
 
+# rubocop:disable Metrics/BlockLength
 describe ArrayAndStringsSolutions do
   sut = ArrayAndStringsSolutions.new
 
@@ -29,7 +30,19 @@ describe ArrayAndStringsSolutions do
     end
   end
 
-  context 'Calculating set_zeroes' do
-    # ...
+  context 'Calculating Set Matric Zeroes' do
+    it 'returns [[1, 0, 1],[0, 0, 0],[1, 0, 1]] when matrix is [[1, 1, 1],[1, 0, 1],[1, 1, 1]]' do
+      matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+      expected = [[1, 0, 1], [0, 0, 0], [1, 0, 1]]
+      result = sut.set_zeroes(matrix)
+      expect(result).to eq(expected)
+    end
+
+    it 'returns [[0, 0, 0, 0],[0, 4, 5, 0],[0, 3, 1, 0]] when matrix is [[0, 1, 2, 0],[3, 4, 5, 2],[1, 3, 1, 5]]' do
+      matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]
+      expected = [[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]
+      result = sut.set_zeroes(matrix)
+      expect(result).to eq(expected)
+    end
   end
 end
