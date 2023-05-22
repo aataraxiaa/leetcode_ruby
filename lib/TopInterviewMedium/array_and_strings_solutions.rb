@@ -62,6 +62,14 @@ class ArrayAndStringsSolutions
     p rows, columns
 
     # Next, try using row and column sets to run through Matrix and set zeros
-
+    matrix.each_with_index do |row, row_index|
+      if rows.include?(row_index)
+        row.fill(0)
+        break
+      elsif
+        # Try columns here
+      end
+      end
+    end
   end
 end
